@@ -15,7 +15,10 @@ export class UserdashboardComponent implements OnInit {
 
   ngOnInit() {
     this.username=this.ls.username;
+
+ 
   }
+
   sendTestReq()
   {
     this.hc.get('/user/test').subscribe((res)=>{

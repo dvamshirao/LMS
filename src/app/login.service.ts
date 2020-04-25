@@ -9,14 +9,20 @@ export class LoginService {
 
   username:String;
   userLoginStatus:Boolean=false;
+  adminLoginStatus:Boolean=false;
+
 
   //inject HttpClient
   constructor(private hc:HttpClient) { }
   
   //a method to make http post request
-  doLogin(userObj):Observable<any>
+  doLoginuser(userObj):Observable<any>
   {
     return this.hc.post('/user/login',userObj);
+  }
+  doLoginadmin(adminObj):Observable<any>
+  {
+    return this.hc.post('/admin/login',adminObj);
   }
   doLogout()
   {

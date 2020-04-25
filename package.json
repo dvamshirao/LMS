@@ -22,6 +22,7 @@
     "bcrypt": "^3.0.8",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.2",
+    "mongoose": "^5.9.10",
     "path": "^0.12.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
