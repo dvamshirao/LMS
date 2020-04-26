@@ -12,102 +12,102 @@
 
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="#">
-                    <i class="fas fa-briefcase"></i>
+                
+                <a style="display: inline" >
+                    <mat-icon class="icon-display">dashboard</mat-icon>
                     Dashboard
                 </a>
             </li>
             <li class="bcd">
                 <a href="#BooksSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-book"></i>
+                    <mat-icon> person_pin</mat-icon>
                     Profile
                 </a>
                 <ul class="collapse list-unstyled" id="BooksSubmenu">
                     <li>
                         
-                        <a href="#">Change Password</a>
+                        <a class="nav-link" routerLink="profile/changepassword">Change Password</a>
                     </li>
                     <li>
-                        <a href="#">Update Details</a>
+                        <a class="nav-link" routerLink="profile/updatedetails">Update Details</a>
                     </li>
                 </ul>
             </li>
             <li class="bcd">
                 <a href="#BooksSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-book"></i>
+                    <mat-icon>library_add</mat-icon>
                     Manage Users
                 </a>
                 <ul class="collapse list-unstyled" id="BooksSubmenu">
                     <li>
                         
-                        <a href="#">Add User</a>
+                        <a class="nav-link" routerLink="manageusers/adduser">Add User</a>
                     </li>
                     <li>
-                        <a href="#">View all users</a>
+                        <a class="nav-link" routerLink="manageusers/viewusers">View all users</a>
                     </li>
                 </ul>
             </li>
             <li class="bcd">
                 <a href="#BooksSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-book"></i>
+                    <mat-icon>library_books</mat-icon>
                     Books
                 </a>
                 <ul class="collapse list-unstyled" id="BooksSubmenu">
                     <li>
                         
-                        <a href="#">List</a>
+                        <a class="nav-link" routerLink="books/bookslist">List</a>
                     </li>
                     <li>
-                        <a href="#">Add Books</a>
+                        <a class="nav-link" routerLink="books/addbooks">Add Books</a>
                     </li>
                 </ul>
             </li>
             <li class="bcd">
                 <a href="#projectsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-tasks"></i>
+                    <mat-icon>assignment</mat-icon>
                     Projects
                 </a>
                 <ul class="collapse list-unstyled" id="projectsSubmenu">
                     <li>
                         
-                        <a href="#">List</a>
+                        <a class="nav-link" routerLink="projects/projectslist">List</a>
                     </li>
                     <li>
-                        <a href="#">Add Projects</a>
+                        <a class="nav-link" routerLink="projects/addproject">Add Projects</a>
                     </li>
                 </ul>
             </li>
             <li class="bcd">
 
                 <a href="#circulationSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-sync-alt"></i>
+                    <mat-icon> import_export</mat-icon>
                    Circulation
                 </a>
                 <ul class="collapse list-unstyled" id="circulationSubmenu">
                     <li>
-                        <a href="#">Issue</a>
+                        <a class="nav-link" routerLink="circulation/issue">Issue</a>
                     </li>
                     <li>
-                        <a href="#">Return</a>
+                        <a class="nav-link" routerLink="circulation/return">Return</a>
                     </li>
                     
                 </ul>
             </li>
             <li>
-                <a href="#">
-                    <i class="fas fa-bell"></i>
+                <a class="nav-link" routerLink="notifydelays" >
+                    <span class="material-icons">
+                        notification_important
+                        </span>
                     Notify Delays
                 </a>
             </li>
+     
             <li>
-                <a href="#">
-                    <i class="fas fa-user-cog"></i>
-                    Admin Panel
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-paper-plane"></i>
+                <a class="nav-link" routerLink="admincontact">
+                    <span class="material-icons">
+                        contacts
+                        </span>
                     Contact
                 </a>
             </li>
@@ -123,12 +123,10 @@
             <div class="container-fluid">
 
                 <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    <i class="fas fa-align-left"></i>
+                    <mat-icon>compare_arrows</mat-icon>
                     
                 </button>
-                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
-                </button>
+                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav  navbar-center ml-auto">
                         <li class="nav-item ">
@@ -141,7 +139,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item ">
-                            <a class="nav-link nav-link-ltr" style="color: #6d7fcc;" href="#" id="abc"><i class="fas fa-sign-out-alt"></i> Log out</a>
+                            <a class="nav-link nav-link-ltr" style="color: #6d7fcc;" routerLink="../login" (click)="changestatus()" id="abc" ngModel><mat-icon>logoutt</mat-icon> Log out</a>
                         </li>
                         
                     </ul>

@@ -15,8 +15,16 @@ export class UserdashboardComponent implements OnInit {
 
   ngOnInit() {
     this.username=this.ls.username;
-
+    $(document).ready(function () {
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+  });
  
+  }
+  changestatus()
+  {
+    this.ls.userLoginStatus=false;
   }
 
   sendTestReq()

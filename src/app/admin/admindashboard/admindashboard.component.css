@@ -3,7 +3,19 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
 }
-
+.mat-icon
+{
+    font-size:medium;
+    width: 20px;
+    padding-top: 8px;
+    
+}
+.material-icons
+{
+    font-size:medium;
+    width: 20px;
+    padding-top: 8px;
+}
 p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1em;

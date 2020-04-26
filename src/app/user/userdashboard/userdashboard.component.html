@@ -17,20 +17,30 @@
                     Dashboard
                 </a>
             </li>
-            <li >
-                <a href="#">
-                    <i class="fas fa-briefcase"></i>
-                    Change Password
+            <li class="bcd">
+                <a href="#BooksSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <mat-icon> person_pin</mat-icon>
+                    Profile
                 </a>
+                <ul class="collapse list-unstyled" id="BooksSubmenu">
+                    <li>
+                        
+                        <a class="nav-link" routerLink="profile/changepassword">Change Password</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="profile/updatedetails">Update Details</a>
+                    </li>
+                </ul>
             </li>
+           
             <li >
-                <a href="#">
+                <a class="nav-link" routerLink="viewissuedbooks">
                     <i class="fas fa-briefcase"></i>
                     View Issued Books
                 </a>
             </li>
             <li >
-                <a href="#">
+                <a class="nav-link" routerLink="submitbookrequest">
                     <i class="fas fa-briefcase"></i>
                     Submit Book Request
                 </a>
@@ -48,12 +58,10 @@
             <div class="container-fluid">
 
                 <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    <i class="fas fa-align-left"></i>
+                    <mat-icon>compare_arrows</mat-icon>
                     
                 </button>
-                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
-                </button>
+                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav  navbar-center ml-auto">
                         <li class="nav-item ">
@@ -66,7 +74,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item ">
-                            <a class="nav-link nav-link-ltr" style="color: #6d7fcc;" href="#" id="abc"><i class="fas fa-sign-out-alt"></i> Log out</a>
+                            <a class="nav-link nav-link-ltr" style="color: #6d7fcc;" routerLink="../login" (click)="changestatus()" id="abc" ngModel><mat-icon>logoutt</mat-icon>Log out</a>
                         </li>
                         
                     </ul>
