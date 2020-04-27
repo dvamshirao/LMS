@@ -23,6 +23,7 @@ export class AdmindashboardComponent implements OnInit {
     
     this.ls.adminLoginStatus=false;
     console.log("gotit",this.ls.adminLoginStatus);
+    this.ls.doLogout();
   }
 
 }

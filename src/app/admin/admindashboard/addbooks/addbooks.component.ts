@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-addbooks',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddbooksComponent implements OnInit {
 
-  constructor() { }
+  constructor(private hc:HttpClient) { }
+ 
 
   ngOnInit() {
   }

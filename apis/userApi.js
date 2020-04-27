@@ -98,7 +98,8 @@ const verifyToken=require("../middlewares/verifyToken");
 
 //testReqHandler
 userApp.get('/test',verifyToken,(req,res)=>{
-    console.log("req headers is ",req.headers.authorization)
+    console.log("req headers is ",req.headers.authorization);
+    res.send({message:"hello"});
 })
 
 //export adminApp

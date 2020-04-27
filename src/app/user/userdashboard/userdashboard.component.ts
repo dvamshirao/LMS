@@ -25,6 +25,7 @@ export class UserdashboardComponent implements OnInit {
   changestatus()
   {
     this.ls.userLoginStatus=false;
+    this.ls.doLogout();
   }
 
   sendTestReq()
