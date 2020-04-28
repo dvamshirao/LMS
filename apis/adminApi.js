@@ -15,48 +15,86 @@ adminApp.get('/readprofile/:username',(req,res)=>{
     res.send({message:"admin profile works"})
 });
 
-userApp.post('/login',(req,res)=>{
+adminApp.post('/login',(req,res)=>{
     var adminCollectionObj=dbo.getDb().admincollectionobj;
     //verify username
-    userCollectionObj.findOne({username:req.body.username},(err,userObj)=>{
+    adminCollectionObj.findOne({username:req.body.username},(err,adminObj)=>{
         if(err)
         {
             console.log("error in read");
         }
-        else if(userObj==null)
+        else if(adminObj==null)
         {
             res.send({message:'invalid username'});
         }
         else
         {
-            bcrypt.compare(req.body.password,userObj.password,(err,result)=>{
-                if(err)
-                {
-                    console.log("err in password compare",err);
-                }
-                else if(result==false)
-                {
-                    res.send({message:'invalid password'});
-                }
-                else
-                {
-                    //create a token and send it to client
-                    jwt.sign({username:userObj.username},'ssshhh',{expiresIn:60},(err,signedToken)=>{
-                        if(err)
-                        {
-                            console.log("err ",err);
-                        }
-                        else
-                        {
-                            res.send({message:signedToken,username:userObj.username});
-                        }
-                    })  
-                }
-            });
+
+            if(req.body.password==adminObj.password)
+            {
+                
+                jwt.sign({username:adminObj.username},'ssshhh',{expiresIn:60},(err,signedToken)=>{
+                    if(err)
+                    {
+                        console.log("err ",err);
+                    }
+                    else
+                    {
+                        res.send({message:signedToken,username:adminObj.username});
+                    }
+                })  
+            }
+            else{
+                res.send({message:'invalid password'});
+            }
+           
         }
     })
 
 })
+adminApp.post('/bookregister',(req,res)=>{
+    var adminCollectionObj=dbo.getDb().admincollectionobj;
+    console.log(req.body);
+    console.log(req.params);
+    adminCollectionObj.findOne({ISBNnumber:req.body.ISBNnumber},(err,bookObjFromDB)=>{
+       
+
+        if(err)
+        {
+            console.log('error in register',err);
+        }
+        else if(bookObjFromDB!=null)
+        {
+            var len=(req.body.ids).length;
+            for(let i=0;i<len;i++)
+            {
+                bookObjFromDB.ids.push(req.body.ids[i]);
+               
+            }
+            adminCollectionObj.save(bookObjFromDB);
+           
+           
+           console.log(bookObjFromDB);
+           
+           
+            res.send({message:"book added to existed isbc"});
+        }
+        else{
+            console.log("entered");
+            adminCollectionObj.insertOne(req.body,(err,success)=>{
+                if(err)
+                {
+                    console.log("error");
+                }
+                else{
+                    res.send({message:"book registered succsessfully"});
+                }
+            })
+        }
+    
+
+    })
+});
 
 adminApp.post('/login',(req,res)=>{
     res.send({message:"admin login works"})

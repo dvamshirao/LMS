@@ -6,7 +6,7 @@ var dbo;
 var usercollectionobj;
 var admincollectionobj;
 //database url
-var dbUrl="mongodb+srv://RuthikaJ:Ruthika28@cluster0-85o5a.mongodb.net/test?retryWrites=true&w=majority";
+var dbUrl="mongodb+srv://vamshi_rao:9951666457@cluster0-yov0q.mongodb.net/test?retryWrites=true&w=majority";
 
 //function to intialize db
  function initDb()
