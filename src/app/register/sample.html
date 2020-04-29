@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var price=0;
+
+function calculateprice()
+{
+
+document.getElementById('button').onclick=function(){
+this.price+=document.getElementById('10kg').value*document.getElementById("qty").value;}
+document.getElementById('button1').onclick=function(){
+this.price+=document.getElementById('20kg').value*document.getElementById("qty2").value;}
+
+    document.getElementById("display").innerHTML=this.price;
+    this.price=0;
+}
+f1()
+{
+document.write("<input type="text" >vamshi</h1>");
+}
+
+
+
+</script>
+</head>
+<body>
+    <button name="10kg" id="10" value="10" onclick="f1()"></button>
+    <button name="20kg" id="20" value="20" onclick="f2()"></button>
+
+
+<div id="q1">
+  
+</div>
+<div id="q2">
+    <input type="text" name="quantity2" id="qty2" />
+     <input type="button" name="add" onclick='javascript:if(document.getElementById("qty2").value<10)document.getElementById("qty2").value++;' value='+' />
+    <input type="button" name="substract" onclick='javascript:if(document.getElementById("qty2").value>0)document.getElementById("qty2").value--;' value='-' />
+
+</div>
+<button onclick="calculateprice()">submit</button>
+<h1 id="display"></h1>
+</body>
+</html>
